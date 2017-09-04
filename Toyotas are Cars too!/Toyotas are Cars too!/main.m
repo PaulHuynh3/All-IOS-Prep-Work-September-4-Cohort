@@ -5,7 +5,7 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "Car.h"
+//#import "Car.h" toyota also imports Car class.... as its a subclass
 #import "Toyota.h"
 
 int main(int argc, const char * argv[]) {

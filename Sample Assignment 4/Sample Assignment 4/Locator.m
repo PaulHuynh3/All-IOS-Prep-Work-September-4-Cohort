@@ -26,9 +26,19 @@
 //create a method to find the largest number in an array
 -(int)findIt:(NSArray *)findTheNumber{
     
-    int maxNumber = [[findTheNumber valueForKeyPath:@"@max.intValue"]intValue];
-    return maxNumber;
+//    int maxNumber = [[findTheNumber valueForKeyPath:@"@max.intValue"]intValue];
+//    return maxNumber;
     
+    int result = 0;
+    
+    for (NSNumber* n in findTheNumber){
+        if ([n intValue] > result){
+            result = [n intValue];
+        }
+    
+    }
+    
+    return result;
 }
 
 

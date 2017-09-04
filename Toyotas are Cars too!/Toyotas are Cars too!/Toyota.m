@@ -10,12 +10,12 @@
 
 - (instancetype)init
 {
-    self = [super initWithModel:@"Prius"];
-    if (self) {
+    if ([super initWithModel:@"Prius"]) {
         
     }
     return self;
 }
+
 
 //-(instancetype)init{
 //    
