@@ -40,13 +40,18 @@ int main(int argc, const char * argv[]) {
         
         //append eh?
         NSString* appendEh = [inputString stringByAppendingString:@"eh?"];
-        
+                              
+        //if user inputs "?" or "!"
         if([inputString isEqualToString:@"?"]){
             NSLog(@"I don't know");
         } else if ([inputString isEqualToString:@"!"]){
             NSLog(@"Whoa calm down");
         }
         
+        
+        //remove spaces
+        
+    NSString *removeSpaces = [inputString stringByReplacingOccurrencesOfString:@"" withString:@"-"];
         
     }
     return 0;
