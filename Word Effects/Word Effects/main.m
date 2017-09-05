@@ -30,9 +30,22 @@ int main(int argc, const char * argv[]) {
         NSString* UpperCase = [inputString uppercaseString];
         
         //lower case
-        NSString* lowerCase = [input lowerCase];
+        NSString* lowerCase = [inputString lowercaseString];
         
-        //numberize
+        //convert ten into a number
+        NSString* a = @"10";
+        int value = [a intValue];
+        NSLog(@"%i",a);
+        
+        
+        //append eh?
+        NSString* appendEh = [inputString stringByAppendingString:@"eh?"];
+        
+        if([inputString isEqualToString:@"?"]){
+            NSLog(@"I don't know");
+        } else if ([inputString isEqualToString:@"!"]){
+            NSLog(@"Whoa calm down");
+        }
         
         
     }
