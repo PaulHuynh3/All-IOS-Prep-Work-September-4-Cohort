@@ -22,7 +22,6 @@ void displayMenu(){
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        
         //255 unit long array of characters
         char inputChars[255];
         
@@ -36,8 +35,11 @@ int main(int argc, const char * argv[]) {
         
         //convert char array to an NSString object
         NSString *inputString = [NSString stringWithUTF8String:inputChars];
+
 int choice;
 do{
+
+    
     displayMenu();
     scanf("%i",&choice);
 switch (choice) {
