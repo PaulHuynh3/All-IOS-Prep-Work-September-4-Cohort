@@ -25,6 +25,9 @@ int main(int argc, const char * argv[]) {
         
         [boxSize calculateVolume];
         
+        Box* SecondBox = [[Box alloc]initWithBoxVolume:3 andWidth:3 andLength:3];
+        
+        [SecondBox calculateVolume];
     
         
         

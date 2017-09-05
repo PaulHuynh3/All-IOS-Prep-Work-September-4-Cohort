@@ -14,14 +14,14 @@
 @property float width;
 @property float length;
 
-//@property(nonatomic)float volume;
+
 
 
 -(instancetype)initWithBoxVolume:(float)height andWidth:(float)width andLength:(float)length;
 
 -(float)calculateVolume;
 
--(float)fitAnotherBox:(Box*)other;
+-(float)doesBoxFit:(Box*)other;
 
 
 @end

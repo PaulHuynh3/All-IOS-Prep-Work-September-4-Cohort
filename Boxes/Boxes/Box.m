@@ -42,8 +42,9 @@
  
  */
 
--(float)fitAnotherBox:(Box*)other {
+-(float)doesBoxFit:(Box*)other {
   
+    
     
 }
 
