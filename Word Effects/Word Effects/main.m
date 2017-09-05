@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 void displayMenu(){
-    printf("enter a number below: \n");
+    printf("Enter a number below: \n");
     printf("1.Uppercase\n");
     printf("2.Lowercase\n");
     printf("3.integer\n");
@@ -25,7 +25,8 @@ int main(int argc, const char * argv[]) {
         
         //255 unit long array of characters
         char inputChars[255];
-        printf("input a string: \n");
+        
+        printf("input a string: ");
         
         //limit input to max 255 characters
         fgets(inputChars, 255, stdin);
@@ -35,42 +36,47 @@ int main(int argc, const char * argv[]) {
         
         //convert char array to an NSString object
         NSString *inputString = [NSString stringWithUTF8String:inputChars];
-        int choice;
+int choice;
 do{
     displayMenu();
     scanf("%i",&choice);
-            switch (choice) {
-                case 1:{
-    NSString* UpperCase = [inputString uppercaseString];
+switch (choice) {
+    case 1:{
+     NSString* UpperCase = [inputString uppercaseString];
                     NSLog(@"%@", UpperCase);
                     break;
                 }
-                case 2:{
-            NSString* lowerCase = [inputString lowercaseString];
-                    NSLog(@"%@",lowerCase);
+    case 2:{
+     NSString* lowerCase = [inputString lowercaseString];
+        NSLog(@"%@",lowerCase);
+        break;
                 }
-                case 3:{
-                    int value = [inputString intValue];
-                    NSLog(@"%i", value);
+    case 3:{
+     int value = [inputString intValue];
+        NSLog(@"%i", value);
+        break;
                 }
-                case 4:{
-                       NSString* appendEh = [inputString stringByAppendingString:@"eh?"];
-                    NSLog(@"%@",appendEh);
+    case 4:{
+     NSString* appendEh = [inputString stringByAppendingString:@" -eh?"];
+        NSLog(@"%@",appendEh);
+        break;
+            }
+    case 5:{
+     NSString* respond = inputString;
+        if([respond containsString:@"?"]){
+        NSLog(@"I don't know");
+        } else if ([respond containsString:@"!"]){
+        NSLog(@"Whoa calm down");
+        }
+    NSLog(@"%@", respond);
+    break;
                 }
-                case 5:{
-                    NSString* respond = inputString;
-                    if([respond containsString:@"?"]){
-                        NSLog(@"I don't know");
-                    } else if ([respond containsString:@"!"]){
-                        NSLog(@"Whoa calm down");
-                    }
-                    NSLog(@"%@", respond);
+    case 6:{
+    NSString *removeSpaces = [inputString stringByReplacingOccurrencesOfString:@"" withString:@"-"];
+    NSLog(@"%@",removeSpaces);
+    break;
                 }
-                case 6:{
-                     NSString *removeSpaces = [inputString stringByReplacingOccurrencesOfString:@"" withString:@"-"];
-                    NSLog(@"%@",removeSpaces);
-                }
-        default: NSLog(@"Please pick a valid number");
+    default: NSLog(@"Please pick a valid number");
                     break;
             }
     
