@@ -26,6 +26,13 @@ int main(int argc, const char * argv[]) {
     //print nsstring object
         NSLog(@"Input was: %@", inputString);
         
+        //uppercase string
+        NSString* UpperCase = [inputString uppercaseString];
+        
+        //lower case
+        NSString* lowerCase = [input lowerCase];
+        
+        //numberize
         
         
     }
