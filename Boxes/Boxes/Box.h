@@ -16,12 +16,14 @@
 
 
 
-
+//create a box with initialization
 -(instancetype)initWithBoxVolume:(float)height andWidth:(float)width andLength:(float)length;
 
--(float)calculateVolume;
+//formula that calculates volume
+-(float)volume;
 
--(float)doesBoxFit:(Box*)other;
+//method that takes in another box and tells how many times another box can fit in it
+-(float)doesBoxFit:(Box*)otherBox;
 
 
 @end

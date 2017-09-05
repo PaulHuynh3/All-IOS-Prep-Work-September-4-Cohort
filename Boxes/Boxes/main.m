@@ -21,14 +21,20 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        Box* boxSize = [[Box alloc]initWithBoxVolume:2 andWidth:2 andLength:2];
+        Box* firstBox = [[Box alloc]initWithBoxVolume:2 andWidth:2 andLength:2];
         
-        [boxSize calculateVolume];
+        [firstBox volume];
         
-        Box* SecondBox = [[Box alloc]initWithBoxVolume:3 andWidth:3 andLength:3];
         
-        [SecondBox calculateVolume];
+        
+        Box* SecondBox = [[Box alloc]initWithBoxVolume:4 andWidth:4 andLength:4];
+        
+        [SecondBox volume];
     
+        //see how many times the box will fit
+        float boxFit = [firstBox doesBoxFit:SecondBox];
+        
+        NSLog(@"%f",boxFit);
         
         
     }
