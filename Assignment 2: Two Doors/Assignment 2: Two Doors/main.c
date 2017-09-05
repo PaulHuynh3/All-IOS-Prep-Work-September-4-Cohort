@@ -14,8 +14,7 @@ int main(int argc, const char * argv[]) {
     char choice;
     
     for (i = 0; i < 100; i++) {
-    
-  
+
     
     printf("Welcome to Two doors.\n");
     printf("Would you like to play? (y/n): ");

@@ -8,51 +8,74 @@
 
 #import <Foundation/Foundation.h>
 
+void displayMenu(){
+    printf("enter a number below: \n");
+    printf("1.Uppercase\n");
+    printf("2.Lowercase\n");
+    printf("3.integer\n");
+    printf("4.Eh?\n");
+    printf("5.? or !\n");
+    printf("6.remove spaces\n");
+
+}
+
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-    //255 unit long array of characters
-        char inputChars[255];
-        printf("input a string: ");
         
-     //limit input to max 255 characters
+        //255 unit long array of characters
+        char inputChars[255];
+        printf("input a string: \n");
+        
+        //limit input to max 255 characters
         fgets(inputChars, 255, stdin);
         
-    //print as a c string
+        //print as a c string
         printf("Your string is %s\n", inputChars);
         
-    //convert char array to an NSString object
+        //convert char array to an NSString object
         NSString *inputString = [NSString stringWithUTF8String:inputChars];
-        
-    //print nsstring object
-        NSLog(@"Input was: %@", inputString);
-        
-        //uppercase string
-        NSString* UpperCase = [inputString uppercaseString];
-        
-        //lower case
-        NSString* lowerCase = [inputString lowercaseString];
-        
-        //convert ten into a number
-        NSString* a = @"10";
-        int value = [a intValue];
-        NSLog(@"%i",a);
-        
-        
-        //append eh?
-        NSString* appendEh = [inputString stringByAppendingString:@"eh?"];
-                              
-        //if user inputs "?" or "!"
-        if([inputString isEqualToString:@"?"]){
-            NSLog(@"I don't know");
-        } else if ([inputString isEqualToString:@"!"]){
-            NSLog(@"Whoa calm down");
-        }
-        
-        
-        //remove spaces
-        
-    NSString *removeSpaces = [inputString stringByReplacingOccurrencesOfString:@"" withString:@"-"];
-        
+        int choice;
+do{
+    displayMenu();
+    scanf("%i",&choice);
+            switch (choice) {
+                case 1:{
+    NSString* UpperCase = [inputString uppercaseString];
+                    NSLog(@"%@", UpperCase);
+                    break;
+                }
+                case 2:{
+            NSString* lowerCase = [inputString lowercaseString];
+                    NSLog(@"%@",lowerCase);
+                }
+                case 3:{
+                    int value = [inputString intValue];
+                    NSLog(@"%i", value);
+                }
+                case 4:{
+                       NSString* appendEh = [inputString stringByAppendingString:@"eh?"];
+                    NSLog(@"%@",appendEh);
+                }
+                case 5:{
+                    NSString* respond = inputString;
+                    if([respond containsString:@"?"]){
+                        NSLog(@"I don't know");
+                    } else if ([respond containsString:@"!"]){
+                        NSLog(@"Whoa calm down");
+                    }
+                    NSLog(@"%@", respond);
+                }
+                case 6:{
+                     NSString *removeSpaces = [inputString stringByReplacingOccurrencesOfString:@"" withString:@"-"];
+                    NSLog(@"%@",removeSpaces);
+                }
+        default: NSLog(@"Please pick a valid number");
+                    break;
+            }
+    
+}
+        while(choice !=0);
     }
     return 0;
 }
