@@ -21,9 +21,11 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
-        Box* calculateVolume = [[Box alloc]initWithBoxVolume:2 andWidth:2 andLength:2];
+        Box* boxSize = [[Box alloc]initWithBoxVolume:2 andWidth:2 andLength:2];
         
-        [calculateVolume calculate];
+        [boxSize calculateVolume];
+        
+    
         
         
     }
