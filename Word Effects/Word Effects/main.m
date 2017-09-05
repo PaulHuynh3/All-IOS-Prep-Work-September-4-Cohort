@@ -74,7 +74,7 @@ switch (choice) {
     break;
                 }
     case 6:{
-    NSString *removeSpaces = [inputString stringByReplacingOccurrencesOfString:@"" withString:@"-"];
+    NSString *removeSpaces = [inputString stringByReplacingOccurrencesOfString:@" " withString:@"-"];
     NSLog(@"%@",removeSpaces);
     break;
                 }
