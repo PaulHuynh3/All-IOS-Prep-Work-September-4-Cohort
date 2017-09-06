@@ -32,7 +32,7 @@ while (match) {
     NSString* askQuestion = generateQuestion.question;
     NSLog(@"%@",askQuestion);
     
-    //add questions that was sent to user
+    //add questions that was sent to user i can also use this way to calculate the time by adding the number to a variable
     [questionArray addObject:askQuestion];
 
     //From property the final correct answer
@@ -70,10 +70,16 @@ while (match) {
     }
     
     NSTimeInterval userPlayTime = [generateQuestion answerTime];
-     NSLog(@"%f",userPlayTime);
+    
+    
+//    pass the property of array and gather each playtime of user calculate using the average time or adding all the times together
+    [questionManager.collectionOfTime addObject:@(userPlayTime)];
+    
+    [questionManager timeOutput];
     
     }
-    
+        
+        
         
     }
 

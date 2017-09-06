@@ -10,9 +10,13 @@
 
 @interface QuestionManager : NSObject
 @property(nonatomic)NSMutableArray* question;
+@property(nonatomic)NSMutableArray* collectionOfTime;
 
 -(instancetype)init; 
 
 -(NSString*)timeOutput;
+
+
+
 
 @end

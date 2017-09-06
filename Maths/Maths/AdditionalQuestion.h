@@ -6,8 +6,6 @@
 //  Copyright © 2017 Paul. All rights reserved.
 //
 
-
-
 #import <Foundation/Foundation.h>
 
 @interface AdditionalQuestion : NSObject
