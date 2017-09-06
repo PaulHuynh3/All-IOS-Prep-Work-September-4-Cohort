@@ -61,7 +61,7 @@ while (match) {
         NSLog(@"Wrong!");
     }
     
-
+    [generateQuestion answerTime];
 
     
             

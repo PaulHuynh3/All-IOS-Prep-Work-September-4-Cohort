@@ -6,6 +6,8 @@
 //  Copyright © 2017 Paul. All rights reserved.
 //
 
+
+
 #import <Foundation/Foundation.h>
 
 @interface AdditionalQuestion : NSObject
@@ -16,10 +18,11 @@
 @property(nonatomic) NSDate* startTime;
 @property(nonatomic) NSDate* endTime;
 
-
 //generate a random math question and answer handling the  correct answer
 -(instancetype)init;
 
+//calculate the amount of seconds from start time to end time
+-(NSTimeInterval)answerTime;
 
 
 @end

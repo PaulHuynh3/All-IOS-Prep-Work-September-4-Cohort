@@ -43,8 +43,18 @@
     return _answer;
 }
 
+/*OK we also need to know the time difference between startTime and endTime in seconds. We will need to add a method to AdditionQuestion. Let's call this method answerTime. This method should return a calculated value based on the startTime and endTime. The return type is an NSTimeInterval.
+ 
+ To do the calculation use the NSDate method timeIntervalSinceDate:. Look up how to use it here. You will want to round this value to make it more human readable. */
 
-
+-(NSTimeInterval)answerTime{
+    NSTimeInterval answerTime = [_endTime timeIntervalSinceDate:_startTime];
+    
+    NSTimeInterval answerTimeSeconds = answerTime * 100000;
+    
+    NSLog(@"%f",answerTimeSeconds);
+    return answerTimeSeconds;
+}
 
 
 @end
