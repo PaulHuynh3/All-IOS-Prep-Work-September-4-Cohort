@@ -22,18 +22,29 @@
         
         //need to ask the question in main pass property through main
         NSString* fullQuestion = [NSString stringWithFormat:@"What is %li + %li?",questionOne,questionTwo];
-        
+        //set property equal to question being asked
         _question = fullQuestion;
         
+        //set startTime in init when its run game will start
+        _startTime = [NSDate date];
+      
         
-        
-        
+        }
+         return self;
     }
+
+
+//set the end time after the user answer the question
+// has to be _answer if i put self.answer it gives error
+-(NSInteger)answer{
+
+    self.endTime = [NSDate date];
     
-    return self;
-
-
+    return _answer;
 }
+
+
+
 
 
 @end

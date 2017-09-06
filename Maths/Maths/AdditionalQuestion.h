@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface AdditionalQuestion : NSObject
-
-@property NSInteger answer;
-@property NSString* question;
+//keep track of the correct answer and the question to ask the user
+@property(nonatomic) NSInteger answer;
+@property(nonatomic) NSString* question;
+//create properties to track how long the user played the game
+@property(nonatomic) NSDate* startTime;
+@property(nonatomic) NSDate* endTime;
 
 
 //generate a random math question and answer handling the  correct answer

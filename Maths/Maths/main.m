@@ -35,10 +35,12 @@ while (match) {
     //Calling method to parse user's answer
     [inputHandler takeUserAnswer];
     
-    //create a property for inputHandler
+    
+    
+    //create a property for user's answer as a string
     NSString* userFinalAnswer = inputHandler.userAnswer;
     
-    //make userfinalanswer as integer
+    //make user's answer as integer
     NSInteger userFinalAnswerInteger = [userFinalAnswer integerValue];
     
     

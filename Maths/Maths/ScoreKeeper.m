@@ -25,8 +25,8 @@
 
 -(void)score{
     
- 
-   //did not create percent sign  60%
+  
+   //did not create percent sign  60% maybe use float
     
     NSString* displayLog = [NSString stringWithFormat:@"Score: %lu right, %lu wrong --- ", self.right,self.wrong];
 
