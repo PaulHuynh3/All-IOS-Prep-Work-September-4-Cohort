@@ -11,9 +11,10 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        bool match = YES;
+
+bool match = YES;
         
-        while (match == YES) {
+while (match) {
        
    AdditionalQuestion *function = [[AdditionalQuestion alloc]init];
     //save the property of question to full question dot notation for property
@@ -40,19 +41,23 @@ int main(int argc, const char * argv[]) {
         NSString *initialInput = [NSString stringWithCString:inputChars encoding:NSUTF8StringEncoding];
         
         //remove white space from user answer
-        NSString* removeWhiteSpace = [initialInput stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString* userAnswerFormatted = [initialInput stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
             //turn user answer as integer
-       NSInteger userAnswerInteger = [removeWhiteSpace integerValue];
-            
-        
+       NSInteger userAnswerInteger = [userAnswerFormatted integerValue];
+    
         
 if (correctAnswer == userAnswerInteger){
     NSLog(@"RIGHT!");
 } else {
     NSLog(@"Wrong! ");
 }
+    
+//if user types "quit" exit out of the while loop.
+    if ([userAnswerFormatted isEqualToString:@"quit"]){
+        match = NO;
         
+    }
     
             
         }
