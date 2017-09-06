@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AdditionalQuestion.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -14,25 +15,48 @@ int main(int argc, const char * argv[]) {
         
         while (match == YES) {
        
+   AdditionalQuestion *function = [[AdditionalQuestion alloc]init];
+    //save the property of question to full question dot notation for property
+    NSString* askQuestion = function.question;
+    NSLog(@"%@",askQuestion);
+    //turn askQuestion into an integer
+    NSInteger questionAsInteger = [askQuestion integerValue];
+
+    //This is from property answer which contains the correct answer not user answer
+    NSInteger correctAnswer = function.answer;
+    
+    
+            
+            
       //255 unit long array of characters
         char inputChars[255];
         
-        printf("Please input a string: ");
+        printf("What is the answer: ");
         
         //limit input to max 255 characters
         fgets(inputChars, 255, stdin);
         
-//        //print as a c string
-        printf("your string is: %s\n",inputChars);
-        
         //convert char array to an NSString object
         NSString *initialInput = [NSString stringWithCString:inputChars encoding:NSUTF8StringEncoding];
         
+        //remove white space from user answer
+        NSString* removeWhiteSpace = [initialInput stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         
-        NSString* userFinalInput = [initialInput stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        NSLog(@"%@",userFinalInput);
+            //turn user answer as integer
+       NSInteger userAnswerInteger = [removeWhiteSpace integerValue];
+            
         
+        
+if (correctAnswer == userAnswerInteger){
+    NSLog(@"RIGHT!");
+} else {
+    NSLog(@"Wrong! ");
+}
+        
+    
+            
         }
+        
         
 
     }
