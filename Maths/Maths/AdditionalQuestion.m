@@ -36,20 +36,4 @@
 }
 
 
-
-//-(int)generateMathQuestion:(int)userAnswer {
-//    
-//
-//    int randomMathQuestion = arc4random_uniform(11) + 5;
-//    self.userInputAnswer = randomMathQuestion;
-//    
-//    char input[255];
-//    printf("What is your answer: ");
-//    fgets(input, 255, stdin);
-//    NSString *collectUserInput = [NSString stringWithUTF8String:input];
-//    
-//    int collectUserInputInt = [collectUserInput intValue];
-//    
-////    if ([])
-
 @end

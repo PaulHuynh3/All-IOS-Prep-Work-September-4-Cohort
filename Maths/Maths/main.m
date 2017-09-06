@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AdditionalQuestion.h"
+#import "InputHandler.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -15,52 +16,47 @@ int main(int argc, const char * argv[]) {
 bool match = YES;
         
 while (match) {
-       
-   AdditionalQuestion *function = [[AdditionalQuestion alloc]init];
+    
+   AdditionalQuestion *generateQuestion = [[AdditionalQuestion alloc]init];
     //save the property of question to full question dot notation for property
-    NSString* askQuestion = function.question;
+    NSString* askQuestion = generateQuestion.question;
     NSLog(@"%@",askQuestion);
 
-    //This is from property answer which contains the correct answer not user answer
-    NSInteger correctAnswer = function.answer;
+    //From property the final correct answer
+    NSInteger correctAnswer = generateQuestion.answer;
     
     
+    InputHandler* inputHandler = [[InputHandler alloc]init];
     
-      //255 unit long array of characters
-        char inputChars[255];
-        
-        printf("What is the answer: ");
-        
-//limit input to max 255 characters fgets collect user's answer
-        fgets(inputChars, 255, stdin);
-        
-        //convert char array to an NSString object
-        NSString *initialInput = [NSString stringWithCString:inputChars encoding:NSUTF8StringEncoding];
-        
-        //remove white space from user answer
-        NSString* userAnswerFormatted = [initialInput stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        
-            //turn user answer as integer
-       NSInteger userAnswerInteger = [userAnswerFormatted integerValue];
+    //Calling method to parse user's answer
+    [inputHandler takeUserAnswer];
     
-        
-if (correctAnswer == userAnswerInteger){
-    NSLog(@"RIGHT!");
-} else {
-    NSLog(@"Wrong! ");
-}
+    //create a property for inputHandler
+    NSString* userFinalAnswer = inputHandler.userAnswer;
     
-//if user types "quit" exit out of the while loop.
-    if ([userAnswerFormatted isEqualToString:@"quit"]){
+    NSInteger userFinalAnswerInteger = [userFinalAnswer integerValue];
+    
+    
+    //if user types "quit" exit out of the while loop.
+    if ([userFinalAnswer isEqualToString:@"quit"]){
         match = NO;
-        
+        break;
     }
+    
+        
+    if (correctAnswer == userFinalAnswerInteger){
+        NSLog(@"RIGHT!");
+    } else {
+        NSLog(@"Wrong! ");
+    }
+    
+
     
             
         }
+    
         
-        
-
     }
+
     return 0;
 }

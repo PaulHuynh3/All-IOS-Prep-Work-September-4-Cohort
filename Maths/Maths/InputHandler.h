@@ -10,6 +10,8 @@
 
 @interface InputHandler : NSObject
 
+@property NSString* userAnswer;
 
+-(NSString*)takeUserAnswer;
 
 @end
