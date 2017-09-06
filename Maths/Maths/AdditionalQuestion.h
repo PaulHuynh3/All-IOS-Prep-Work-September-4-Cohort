@@ -14,7 +14,7 @@
 @property NSString* question;
 
 
-//generate a random math question and answer handling the answer
+//generate a random math question and answer handling the  correct answer
 -(instancetype)init;
 
 

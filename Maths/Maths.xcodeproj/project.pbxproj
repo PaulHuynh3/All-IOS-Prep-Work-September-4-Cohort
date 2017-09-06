@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DA9BE4D51F5F42EC00CB24F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE4D41F5F42EC00CB24F5 /* main.m */; };
 		DA9BE4DD1F5F660B00CB24F5 /* AdditionalQuestion.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9BE4DC1F5F660B00CB24F5 /* AdditionalQuestion.m */; };
+		DABD582F1F602955009FFDB5 /* InputHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = DABD582E1F602955009FFDB5 /* InputHandler.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		DA9BE4D41F5F42EC00CB24F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DA9BE4DB1F5F660B00CB24F5 /* AdditionalQuestion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdditionalQuestion.h; sourceTree = "<group>"; };
 		DA9BE4DC1F5F660B00CB24F5 /* AdditionalQuestion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdditionalQuestion.m; sourceTree = "<group>"; };
+		DABD582D1F602955009FFDB5 /* InputHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputHandler.h; sourceTree = "<group>"; };
+		DABD582E1F602955009FFDB5 /* InputHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputHandler.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				DA9BE4D41F5F42EC00CB24F5 /* main.m */,
 				DA9BE4DB1F5F660B00CB24F5 /* AdditionalQuestion.h */,
 				DA9BE4DC1F5F660B00CB24F5 /* AdditionalQuestion.m */,
+				DABD582D1F602955009FFDB5 /* InputHandler.h */,
+				DABD582E1F602955009FFDB5 /* InputHandler.m */,
 			);
 			path = Maths;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA9BE4DD1F5F660B00CB24F5 /* AdditionalQuestion.m in Sources */,
+				DABD582F1F602955009FFDB5 /* InputHandler.m in Sources */,
 				DA9BE4D51F5F42EC00CB24F5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
