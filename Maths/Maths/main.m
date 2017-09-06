@@ -9,14 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "AdditionalQuestion.h"
 #import "InputHandler.h"
+#import "ScoreKeeper.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
 bool match = YES;
+       //instantiating score outside loop so it saves..
+ScoreKeeper* scoreKeeper = [[ScoreKeeper alloc]init];
         
+
 while (match) {
-    
+    [scoreKeeper score];
    AdditionalQuestion *generateQuestion = [[AdditionalQuestion alloc]init];
     //save the property of question to full question dot notation for property
     NSString* askQuestion = generateQuestion.question;
@@ -34,6 +38,7 @@ while (match) {
     //create a property for inputHandler
     NSString* userFinalAnswer = inputHandler.userAnswer;
     
+    //make userfinalanswer as integer
     NSInteger userFinalAnswerInteger = [userFinalAnswer integerValue];
     
     
@@ -43,17 +48,22 @@ while (match) {
         break;
     }
     
-        
+    
+    //scorekeeper and displays if user answer is correct.
     if (correctAnswer == userFinalAnswerInteger){
-        NSLog(@"RIGHT!");
+        
+        scoreKeeper.right++;
+        NSLog(@"Right!");
     } else {
-        NSLog(@"Wrong! ");
+        scoreKeeper.wrong++;
+        NSLog(@"Wrong!");
     }
     
 
+
     
             
-        }
+    }
     
         
     }
