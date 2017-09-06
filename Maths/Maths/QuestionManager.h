@@ -9,5 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface QuestionManager : NSObject
+@property(nonatomic)NSMutableArray* question;
+
+-(instancetype)init; 
+
+-(NSString*)timeOutput;
 
 @end

@@ -48,12 +48,14 @@
  To do the calculation use the NSDate method timeIntervalSinceDate:. Look up how to use it here. You will want to round this value to make it more human readable. */
 
 -(NSTimeInterval)answerTime{
-    NSTimeInterval answerTime = [_endTime timeIntervalSinceDate:_startTime];
+    NSTimeInterval answerTime = [self.endTime timeIntervalSinceDate:self.startTime];
     
-    NSTimeInterval answerTimeSeconds = answerTime * 100000;
     
-    NSLog(@"%f",answerTimeSeconds);
-    return answerTimeSeconds;
+    NSTimeInterval getSeconds = answerTime * 100000;
+    
+    NSInteger getSecondsInteger = round(getSeconds);
+    
+    return getSecondsInteger;
 }
 
 

@@ -10,21 +10,30 @@
 #import "AdditionalQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
 bool match = YES;
-       //instantiating score outside loop so it saves..
+//instantiating score outside loop so it saves..
 ScoreKeeper* scoreKeeper = [[ScoreKeeper alloc]init];
         
-
+//instantiate QuestionManager array outside or array will reset each time
+QuestionManager* questionManager = [[QuestionManager alloc]init];
+//property of question pass through
+NSMutableArray* questionArray = questionManager.question;
+        
+        
 while (match) {
     [scoreKeeper score];
    AdditionalQuestion *generateQuestion = [[AdditionalQuestion alloc]init];
     //save the property of question to full question dot notation for property
     NSString* askQuestion = generateQuestion.question;
     NSLog(@"%@",askQuestion);
+    
+    //add questions that was sent to user
+    [questionArray addObject:askQuestion];
 
     //From property the final correct answer
     NSInteger correctAnswer = generateQuestion.answer;
@@ -34,7 +43,6 @@ while (match) {
     
     //Calling method to parse user's answer
     [inputHandler takeUserAnswer];
-    
     
     
     //create a property for user's answer as a string
@@ -61,10 +69,9 @@ while (match) {
         NSLog(@"Wrong!");
     }
     
-    [generateQuestion answerTime];
-
+    NSTimeInterval userPlayTime = [generateQuestion answerTime];
+     NSLog(@"%f",userPlayTime);
     
-            
     }
     
         
