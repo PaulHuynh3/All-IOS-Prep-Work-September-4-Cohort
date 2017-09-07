@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AdditionalQuestion : NSObject
+@interface Question: NSObject
 //keep track of the correct answer and the question to ask the user
 @property(nonatomic) NSInteger answer;
 @property(nonatomic) NSString* question;
@@ -16,11 +16,16 @@
 @property(nonatomic) NSDate* startTime;
 @property(nonatomic) NSDate* endTime;
 
+//adding 2 new properties for superclass
+@property(nonatomic)int rightValue;
+@property(nonatomic)int leftValue;
+
 //generate a random math question and answer handling the  correct answer
 -(instancetype)init;
 
 //calculate the amount of seconds from start time to end time
 -(NSTimeInterval)answerTime;
 
+-(void)generateQuestion;
 
 @end

@@ -33,15 +33,8 @@
     return self;
 }
 
-/*
- QuestionManager is also going to generate a string like this: total time: 60s, average time: 10s
- 
- So go ahead and create a method called something like timeOutput. Make it return an NSString*. Generate this string and return it.
- 
- In main.m call this method. Log the returned string. Your app should now be able to produce an output like this:
- 
- */
 
+//pulling the time the user takes to answer a question from the array
 -(NSString *)timeOutput{
 
     int totalTime = 0;

@@ -11,6 +11,7 @@
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
 #import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -18,16 +19,26 @@ int main(int argc, const char * argv[]) {
 bool match = YES;
 //instantiating score outside loop so it saves..
 ScoreKeeper* scoreKeeper = [[ScoreKeeper alloc]init];
+
+//instantiating keep track of users data
+InputHandler* inputHandler = [[InputHandler alloc]init];
         
 //instantiate QuestionManager array outside or array will reset each time
 QuestionManager* questionManager = [[QuestionManager alloc]init];
-//property of question pass through
-NSMutableArray* questionArray = questionManager.question;
+
         
+//questionFactory outside the whileloop will provide a new random question each time
+QuestionFactory *questionFactory = [[QuestionFactory alloc]init];
+        
+
         
 while (match) {
     [scoreKeeper score];
-   AdditionalQuestion *generateQuestion = [[AdditionalQuestion alloc]init];
+    //property of question pass through
+    NSMutableArray* questionArray = questionManager.question;
+   Question *generateQuestion = [questionFactory generateRandomQuestion];
+
+    
     //save the property of question to full question dot notation for property
     NSString* askQuestion = generateQuestion.question;
     NSLog(@"%@",askQuestion);
@@ -38,8 +49,6 @@ while (match) {
     //From property the final correct answer
     NSInteger correctAnswer = generateQuestion.answer;
     
-    
-    InputHandler* inputHandler = [[InputHandler alloc]init];
     
     //Calling method to parse user's answer
     [inputHandler takeUserAnswer];
